@@ -4,7 +4,8 @@
   "description": "Converts JSON schema objects or files into Zod schemas",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./dist && tsc && copyfiles package.json LICENSE readme.md ./dist"
+    "clean": "rimraf ./dist && rimraf ./parsers && rimraf ./utils && rimraf cli.* && rimraf index.* && rimraf jsonSchemaToZod.*",
+    "build": "rimraf ./dist && tsc && copyfiles -u 1 \"dist/**/*\" ./ && rimraf ./dist"
   },
   "keywords": [
     "zod",
